@@ -1,1 +1,1 @@
-# RentRelief
+Rent Relief is a comprehensive platform designed to streamline the rental process for bachelors by providing a centralized hub for all housing needs. Users can efficiently search for rental properties with advanced filters, post and manage room advertisements, and find compatible flat mates through detailed profiles and an intelligent matching algorithm. The platform also features a user-friendly account management, and real-time notifications to keep users updated on new listings and inquiries, making the entire housing process simpler and more efficient.
