@@ -1,0 +1,94 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+.bg {
+    background-image: url("image1.jpg");
+
+    height: 100%; 
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+}
+
+.navbar, .footer-section {
+    background-color: rgba(0, 0, 0, 0.6); 
+}
+
+.navbar {
+    height: 70px;
+}
+
+.navbar .logo {
+    height: 70px;
+}
+
+.hero-section {
+    height: calc(100vh - 70px); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.features-section {
+    z-index: 1;
+    position: relative;
+    margin-top: -200px; 
+}
+
+.feature-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.feature-box .feature-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.footer-section {
+    color: grey;
+}
+/* Style the "Get Started" button */
+.btn-primary {
+    background-color: darkred;
+    border-color: darkred;
+}
+
+.btn-primary:hover {
+    background-color: #5c0404;
+    border-color: #5c0404;
+}
+
+.nav-item {
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.nav-link {
+    padding: 10px 15px;
+    color: white !important; 
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
