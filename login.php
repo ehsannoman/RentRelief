@@ -1,26 +1,48 @@
 <?php
 session_start();
 
+include 'config.php';
+
+$error = '';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['user']) && isset($_POST['password'])) {
         $username = $_POST['user'];
         $password = $_POST['password'];
 
-        require_once 'database.php';
-        $conn = connectDB();
-
-        $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-        $result = mysqli_query($conn, $query);
-
-        if (mysqli_num_rows($result) == 1) {
-            $_SESSION['username'] = $username;
-            header("Location: ../home.html");
-            exit();
+        if (empty($username) || empty($password)) {
+            $error = "Please enter both username and password";
         } else {
-            $error = "Invalid username or password";
+            // Validate credentials
+            $query = "SELECT * FROM users WHERE email=?";
+            if ($stmt = $conn->prepare($query)) {
+                // Bind parameters
+                $stmt->bind_param("s", $username);
+                // Execute the statement
+                $stmt->execute();
+                // Get result
+                $result = $stmt->get_result();
+                // Check if user exists
+                if ($result->num_rows == 1) {
+                    $row = $result->fetch_assoc();
+                    if (password_verify($password, $row['password'])) {
+                        $_SESSION['email'] = $row['email'];
+                        header("Location: main.php"); // Redirect to main.php
+                        exit();
+                    } else {
+                        $error = "Invalid username or password";
+                    }
+                } else {
+                    $error = "Invalid username or password";
+                }
+                // Close statement
+                $stmt->close();
+            } else {
+                $error = "Oops! Something went wrong.";
+            }
         }
-
-        mysqli_close($conn);
+    } else {
+        $error = "Please enter both username and password";
     }
 }
 ?>
@@ -39,12 +61,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <br>
     <div class="login">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <input type="text" placeholder="username" name="user"><br>
+            <input type="text" placeholder="username" name="user" value="<?php if(isset($_POST['user'])) echo $_POST['user']; ?>"><br>
             <input type="password" placeholder="password" name="password"><br>
             <input type="submit" value="Login">
             <span>Not registered? <a href="register.php">Create an Account.</a></span>
         </form>
-        <?php if (isset($error)) { echo '<p style="color: red;">' . $error . '</p>'; } ?>
+        <?php if (!empty($error)) { echo '<h3 style="color:darkred font, font-style: italic;">' . $error . '</h3>'; } ?>
     </div>
 </body>
 </html>
