@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:100,200,400');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    overflow-x: hidden;
+    background: #fff;
+}
+
+.blur-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('image11.jpg') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: #fff;
+    z-index: 1000;
+}
+
+.logo {
+    height: 50px; 
+}
+
+.navbar-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icon {
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+}
+
+.sidebar {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: rgba(88, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding-top: 20px;
+    color: #ffffff;
+    z-index: 1000; 
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #b4b4b4;
+    display: block;
+    font-size: 16px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+.property-details {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+
+}
+
+.property-details h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 30px;
+}
+
+.image-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.image-carousel img {
+    height: 200px;
+    border-radius: 8px;
+}
+
+.overview, .description, .address, .features, .contact-information {
+    margin-bottom: 20px;
+}
+
+.overview ul, .address ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.overview ul li, .address ul li {
+    margin: 5px 0;
+}
+
+.address button, .contact-information button {
+    background-color: darkred;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.address button:hover, .contact-information button:hover {
+    background-color: gray;
+}
+
+.contact-information p {
+    margin: 5px 0;
+}
+
+.features ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.features ul li {
+    flex: 1 1 45%; /* Adjust as needed */
+    list-style-type: disc; /* Use different list style if preferred */
+    margin-left: 20px; /* Adjust spacing between items */
+}
