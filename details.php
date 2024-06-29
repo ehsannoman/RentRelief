@@ -21,7 +21,7 @@
 
         <div class="sidebar">
             <ul>
-                <li><a href="#">Posts</a></li>
+                <li><a href="main.php">Posts</a></li>
                 <li><a href="createpost.php">Create Post</a></li>
                 <li><a href="#">My Posts</a></li>
                 <li><a href="#">Wishlist</a></li>
@@ -41,7 +41,7 @@
                     if (mysqli_num_rows($result) > 0) {
                         $property = mysqli_fetch_assoc($result);
             ?>
-            <h1>Details</h1>
+            <h1 class="details">Details</h1>
             <div class="image-carousel">
             <?php
                     // Display images
@@ -58,7 +58,7 @@
             </div>
 
             <div class="overview">
-                <h2>Overview</h2>
+                <h2 class="details">Overview</h2>
                 <ul>
                     <li>Location: <?php echo $property['area']; ?></li>
                     <li>Rent Type: <?php echo $property['type']; ?></li>
@@ -67,12 +67,12 @@
             </div>
 
             <div class="description">
-                <h2>Description</h2>
+                <h2 class="details">Description</h2>
                 <p><?php echo $property['info']; ?></p>
             </div>
 
             <div class="address">
-                <h2>Address</h2>
+                <h2 class="details">Address</h2>
                 <ul>
                     <li>House: <?php echo $property['house_no']; ?></li>
                     <li>Road: <?php echo $property['road_no']; ?></li>
@@ -82,7 +82,7 @@
             </div>
 
             <div class="features">
-                <h2>Features</h2>
+                <h2 class="details">Features</h2>
                 <ul>
                     <?php
                         $features = explode(',', $property['facilities']);
@@ -94,7 +94,7 @@
             </div>
 
             <div class="contact-information">
-                <h2>Contact Information</h2>
+                <h2 class="details">Contact Information</h2>
                 <p>Email: <?php echo $property['email']; ?></p>
                 <p>Phone: <?php echo $property['contact_no']; ?></p>
                 <p>Facebook: <?php echo $property['facebook']; ?></p>
