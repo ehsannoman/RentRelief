@@ -19,9 +19,8 @@ body {
     bottom: 0;
     width: auto;
     height: auto;
-    overflow: hidden; /* Prevent content from overflowing */
+    overflow: hidden; 
 }
-
 .background {
     position: absolute;
     top: 0;
@@ -32,7 +31,7 @@ body {
     height: auto;
     background-image: url("image7.jpg");
     background-size: cover;
-    filter: blur(5px); /* Apply blur effect to the background */
+    filter: blur(5px); 
     z-index: -1;
 }
 
@@ -126,4 +125,18 @@ body {
 
 .register span a:hover {
     text-decoration: underline;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 5px;
+    z-index: 1000;
+}
+.notification.success {
+    background-color:darkred;
 }
