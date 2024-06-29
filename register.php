@@ -1,3 +1,51 @@
+<?php
+include 'config.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $fullname = $_POST['fullname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
+    $gender = $_POST['gender'];
+    $department = $_POST['department'];
+    $semester = $_POST['semester'];
+
+    // Validate email format
+    if (strpos($email, '@aust.edu') !== false) {
+        if ($password === $confirm_password) {
+            // Check if email is already registered
+            $email_check_query = "SELECT * FROM users WHERE email='$email' LIMIT 1";
+            $result = $conn->query($email_check_query);
+            if ($result->num_rows == 0) {
+                $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+                $sql = "INSERT INTO users (fullname, email, password, gender, department, semester)
+                        VALUES ('$fullname', '$email', '$hashed_password', '$gender', '$department', '$semester')";
+
+                if ($conn->query($sql) === TRUE) {
+                    echo "<div class='notification success'>Registration Successful! Redirecting to login...</div>";
+                    echo "<script>
+                            setTimeout(function(){
+                                window.location.href = 'login.php';
+                            }, 3000);
+                          </script>";
+                } else {
+                    echo "<div class='notification error'>Registration failed: " . $conn->error . "</div>";
+                }
+            } else {
+                echo "<div class='notification error'>Email is already registered!</div>";
+            }
+        } else {
+            echo "<div class='notification error'>Passwords do not match!</div>";
+        }
+    } else {
+        echo "<div class='notification error'>Email must end with @aust.edu</div>";
+    }
+
+    $conn->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +55,7 @@
     <link href="https://fonts.googleapis.com/css?family=Exo:100,200,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300" rel="stylesheet">
     <link rel="stylesheet" href="register.css">
+
 </head>
 <body>
     <div class="body">
@@ -56,27 +105,3 @@
     </div>
 </body>
 </html>
-
-
-<?php
-// Process form submission
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Collect form data
-    $fullname = $_POST['fullname'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
-    $gender = $_POST['gender'];
-    $department = $_POST['department'];
-    $semester = $_POST['semester'];
-
-    // Add your validation and database insertion code here
-    // For demonstration purposes, we'll just print the collected data
-    echo "<h2>Registration Successful!</h2>";
-    echo "<p>Full Name: $fullname</p>";
-    echo "<p>Edu Mail: $email</p>";
-    echo "<p>Gender: $gender</p>";
-    echo "<p>Department: $department</p>";
-    echo "<p>Semester: $semester</p>";
-}
-?>
