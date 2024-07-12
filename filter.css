@@ -1,0 +1,80 @@
+/* Container for the filter button and form */
+.filter-container {
+    position: relative; /* Fix the position at the top right corner */
+    top: 20px; /* Adjust space from the top */
+    right: 20px; /* Adjust space from the right */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+/* Style for the filter button */
+.filter-button {
+    background: darkred;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style for the filter icon */
+.filter-icon {
+    width: 24px; /* Smaller icon size */
+    height: 24px;
+}
+
+/* Style for the filter form */
+.filter-form {
+    display: none; /* Hide the form by default */
+    position: absolute; /* Position it relative to the filter container */
+    top: 40px; /* Position below the button */
+    right: 0;
+    width: 300px; /* Adjust width */
+    max-height: 500px; /* Limit height */
+    background: #fff; /* Background color of the form */
+    border: 1px solid #ddd; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for form */
+    padding: 15px;
+    box-sizing: border-box; /* Include padding and border in the width */
+    overflow-y: auto; /* Add scrollbar if content overflows */
+}
+
+/* Style for the form heading */
+.filter-form h3 {
+    margin-top: 0;
+}
+
+/* Style for the form */
+.filter-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style for labels */
+.filter-form label {
+    margin: 10px 0 5px; /* Spacing between labels and inputs */
+}
+
+/* Style for inputs and selects */
+.filter-form input,
+.filter-form select {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Style for the submit button */
+.filter-form button {
+    background: darkred;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Hover effect for the submit button */
+.filter-form button:hover {
+    background: #5c0404;
+}
