@@ -32,7 +32,7 @@ body {
     left: 0;
     right: 0;
     height: 70px;
-    background-color: rgba(0, 0, 0, 0.6); 
+    background-color: rgba(0, 0, 0, 0.9); 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,8 +51,8 @@ body {
 }
 
 .icon {
-    height: 24px;
-    width: 24px;
+    height: 35px;
+    width: 35px;
     cursor: pointer;
 }
 
