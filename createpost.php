@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Ensure user is logged in
 if (!isset($_SESSION['email'])) {
     header("Location: login.php");
     exit();
@@ -17,6 +16,7 @@ if (!isset($_SESSION['email'])) {
     <title>Create Post</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo:100,200,400|Source+Sans+Pro:700,400,300">
     <link rel="stylesheet" href="createpost.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="blur-bg"></div>
@@ -26,19 +26,20 @@ if (!isset($_SESSION['email'])) {
         <div class="navbar">
             <img src="logo.png" alt="Logo" class="logo">
             <div class="navbar-icons">
-                <img src="notification.png" alt="Notifications" class="icon">
-                <img src="user.png" alt="Profile" class="icon">
+                <a href="user.php"><img src="user.png" alt="Profile" class="icon"></a>
             </div>
         </div>
 
         <div class="sidebar">
             <ul>
-                <li><a href="#">Posts</a></li>
-                <li><a href="createpost.php">Create Post</a></li>
-                <li><a href="#">My Posts</a></li>
-                <li><a href="#">Wishlist</a></li>
-                <li><a href="logout.php">Logout</a></li>
+                <li><a href="main.php"><i class="fas fa-rss"></i> Posts</a></li>
+                <li><a href="createpost.php"><i class="fas fa-file-upload"></i> Create Post</a></li>
+                <li><a href="mypost.php"><i class="fas fa-shopping-bag"></i> My Posts</a></li>
+                <li><a href="wishlist.php"><i class="fas fa-heart"></i> Wishlist</a></li>
+                <li><a href="home.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </ul>
+        </div>
+l>
         </div>
 
         <div class="main-content">
@@ -91,8 +92,6 @@ if (!isset($_SESSION['email'])) {
                 
                 <div class="section">
                     <h3>Contact Information</h3>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
                     
                     <label for="contact_no">Contact No (optional):</label>
                     <input type="text" id="contact_no" name="contact_no">
