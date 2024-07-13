@@ -6,22 +6,20 @@ body {
     padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
     overflow-x: hidden;
+    background-color: #202020;
+    color: #e0e0e0;
 }
+
 .blur-bg {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('image8.jpg') no-repeat center center fixed;
+    background: url('image1.jpg') no-repeat center center fixed;
     background-size: cover;
-    filter: blur(8px); 
-    z-index: -1; 
-}
-
-.content {
-    position: relative; 
-    z-index: 1; 
+    filter: blur(8px);
+    z-index: -1;
 }
 
 .navbar {
@@ -30,7 +28,7 @@ body {
     left: 0;
     right: 0;
     height: 70px;
-    background-color: rgba(0, 0, 0, 0.6); 
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,12 +38,13 @@ body {
 }
 
 .logo {
-    height: 70px;
+    height: 50px;
 }
 
 .navbar-icons {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 
 .icon {
@@ -63,10 +62,10 @@ body {
     background: rgba(88, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     padding-top: 20px;
-    color: #fff;
-    z-index: 1000; 
+    color: #ffffff;
+    z-index: 1000;
 }
 
 .sidebar ul {
@@ -76,24 +75,31 @@ body {
 }
 
 .sidebar ul li {
-    padding: 10px 20px;
+    padding: 10px 0;
 }
 
 .sidebar ul li a {
     text-decoration: none;
-    color: #fff;
-    display: block;
+    color: #b4b4b4;
+    display: flex;
+    align-items: center;
     font-size: 16px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
 }
 
 .sidebar ul li a:hover {
-    background: #555;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
 }
 
-/* Main content styles */
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
 .main-content {
-    margin-top: 60px;
-    margin-left: 220px;
+    margin-top: 70px;
+    margin-left: 200px; /* Adjusted to 200px for better alignment */
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -101,11 +107,11 @@ body {
 }
 
 .post-card {
-    background: #fff;
+    background: rgba(41, 39, 39, 0.437);
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.896);
     overflow: hidden;
-    width: 300px;
+    width: 350px;
 }
 
 .post-image {
@@ -116,10 +122,19 @@ body {
 
 .post-details {
     padding: 15px;
+    color: whitesmoke;
+    font-weight: bold;
 }
 
 .post-details p {
     margin: 5px 0;
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .details-button {
@@ -129,17 +144,68 @@ body {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 4px;
-    margin-top: 10px;
 }
 
 .details-button:hover {
     background: #5c0404;
 }
 
-.wishlist-icon {
-    width: 24px;
-    height: 24px;
+.wishlist-button {
+    background: darkred;
+    color: white;
+    border: none;
+    padding: 10px 20px;
     cursor: pointer;
-    float: right;
-    margin-top: -34px;
+    border-radius: 4px;
+}
+
+.wishlist-button:hover {
+    background: #5c0404;
+}
+
+.wishlist-button.active {
+    background: #3a3838;
+}
+
+.wishlist-button.active:hover {
+    background: darkgray;
+}
+
+.dropdown-menu {
+    background-color: rgba(88, 0, 0, 0.8);
+    color: #fff;
+}
+
+.dropdown-item {
+    color: #fff;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-menu .form-group {
+    margin-bottom: 1rem;
+}
+
+.dropdown-menu label {
+    font-weight: bold;
+}
+
+.dropdown-menu .form-check-label {
+    margin-right: 10px;
+}
+
+.dropdown-menu .form-check-input {
+    margin-top: 0.3rem;
+}
+
+.btn-primary {
+    background-color: darkred;
+    border-color: darkred;
+}
+
+.btn-primary:hover {
+    background-color: #5c0404;
+    border-color: #5c0404;
 }
