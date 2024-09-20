@@ -9,10 +9,12 @@ Rent Relief simplifies the rental process for bachelors by providing a centraliz
 - **Find Compatible Flatmates**: Detailed profiles to find compatible flatmates.
 - **Create Wishlists**: Save favorite properties to wishlists.
 - **Easy Updates**: Simple interface to update posts.
-- **Add YouTube Videos**: Option to add YouTube video links to property ads.
 
 ## Demonstration:
    - [Rent Relief Demo](https://www.youtube.com/watch?v=VvBxGCctiEE) Click the link to watch the demonstration video.
+
+## Project Report:
+   - You can access the detailed project report from this [Link](https://drive.google.com/file/d/14AxA1JYVrxiEkXr0KptNi-uGX6QjZ-ws/view?usp=drive_link).
 
 ## Requirements
 
