@@ -14,7 +14,7 @@ Rent Relief simplifies the rental process for bachelors by providing a centraliz
    - [Rent Relief Demo](https://www.youtube.com/watch?v=VvBxGCctiEE) Click the link to watch the demonstration video.
 
 ## Project Report:
-   - You can access the detailed project report from this [Link](https://drive.google.com/file/d/14AxA1JYVrxiEkXr0KptNi-uGX6QjZ-ws/view?usp=drive_link).
+   - You can access the detailed project report from this [Link](https://drive.google.com/file/d/1TDfwgZ9LUbAssdxjiBQBOKQUlMql-0y2/view?usp=sharing).
 
 ## Requirements
 
